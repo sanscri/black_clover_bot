@@ -1,0 +1,52 @@
+from aiogram import Router, F
+from aiogram.filters import CommandStart
+from aiogram.fsm.context import FSMContext
+from aiogram.types import Message, CallbackQuery
+from database.dao import set_user
+from keyboards.reply_other_kb import main_kb
+from aiogram.types import FSInputFile
+from create_bot import bot, dp, admins
+from pathlib import Path
+
+from keyboards.reply_profile_kb import main_profile_kb
+
+start_router = Router()
+
+
+@start_router.message(F.text == '🔙Назад')
+@start_router.message(CommandStart())
+async def cmd_start(message: Message, state: FSMContext):
+    BASE_DIR = Path(__file__).parent.parent.parent
+    WELCOME_IMAGE_PATH = BASE_DIR / "assets" / "hello.jpg"
+    print(WELCOME_IMAGE_PATH)
+    await state.clear()
+    user = await set_user(tg_id=message.from_user.id,
+                          username=message.from_user.username,
+                          full_name=message.from_user.full_name)
+    greeting = f"Привет, {message.from_user.full_name}! Выбери необходимое действие"
+    if user is None:
+        greeting = f"Великая война, затронувшая все 4 королевства мира Чёрного клевера, закончилась 300 лет назад.\n\nВойска Люциуса Зогратиса тогда потерпели поражение в битве за столицу Королевства Клевер. Жизнь возвратилась в мирное русло, а о героях той войны, Асте и Юно, стали слагать легенды.\nОднако на горизонте появилась новая угроза.\n\nИз дальних уголков всех четырёх королевств доходят слухи о странных подземельях, оставленных далёкими предками, жившими тысячилетия назад на этой земле, о разломах, порождающих невиданных чудовищ, а также о появленнии новых Великих Магических Зон на нейтральных территориях, в которых очень опасно находиться.\n\nCейчас после той великой войны судьба дала жителям мира Чёрного клевера передышку, но надолго ли?\n\nСможете ли вы повлиять на исход будущих событий и встать в один ряд с сильными мира сего? Все в ваших руках…"
+
+    photo = FSInputFile(WELCOME_IMAGE_PATH)
+    await message.answer_photo(photo=photo, caption=greeting, reply_markup=main_kb())
+
+@start_router.message(F.text == '❌ Остановить сценарий')
+async def stop_fsm(message: Message, state: FSMContext):
+    await state.clear()
+    await message.answer(f"Сценарий остановлен. Для выбора действия воспользуйся клавиатурой ниже",
+                         reply_markup=main_kb())
+
+
+@start_router.callback_query(F.data == 'main_menu')
+async def main_menu_process(call: CallbackQuery, state: FSMContext):
+    await state.clear()
+    await call.answer('Вы вернулись в главное меню.')
+    await call.message.answer(f"Привет, {call.from_user.full_name}! Выбери необходимое действие",
+                              reply_markup=main_kb())
+
+
+@start_router.message(F.text == '👤Профиль')
+async def cmd_start(message: Message, state: FSMContext):
+    await state.clear()
+    profile = f"Ваш профиль"
+    await message.answer(profile, reply_markup=main_profile_kb())
