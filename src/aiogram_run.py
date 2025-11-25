@@ -3,7 +3,7 @@ from create_bot import bot, dp, admins
 from aiogram.types import BotCommand, BotCommandScopeDefault
 
 from handlers.start_router import start_router
-
+from handlers.help_router import help_router
 
 # Функция, которая настроит командное меню (дефолтное для всех пользователей)
 async def set_commands():
@@ -33,7 +33,7 @@ async def stop_bot():
 async def main():
     # регистрация роутеров
     dp.include_router(start_router)
-
+    dp.include_router(help_router)
     # регистрация функций
     dp.startup.register(start_bot)
     dp.shutdown.register(stop_bot)

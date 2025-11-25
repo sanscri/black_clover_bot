@@ -26,18 +26,6 @@ def main_kb():
         input_field_placeholder="Воспользуйся меню👇"
     )
 
-def help_kb():
-    kb_list = [
-        [KeyboardButton(text="🗂 База знаний"), KeyboardButton(text="📚 Гайды")],
-        [KeyboardButton(text="🔙Назад")]
-    ]
-    return ReplyKeyboardMarkup(
-        keyboard=kb_list,
-        resize_keyboard=True,
-        one_time_keyboard=True,
-        input_field_placeholder="Воспользуйся меню👇"
-    )
-
 def stop_fsm():
     kb_list = [
         [KeyboardButton(text="❌ Остановить сценарий")],

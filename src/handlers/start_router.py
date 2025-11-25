@@ -16,10 +16,9 @@ start_router = Router()
 @start_router.message(F.text == '🔙Назад')
 @start_router.message(CommandStart())
 async def cmd_start(message: Message, state: FSMContext):
+    await state.clear()
     BASE_DIR = Path(__file__).parent.parent.parent
     WELCOME_IMAGE_PATH = BASE_DIR / "assets" / "hello.jpg"
-    print(WELCOME_IMAGE_PATH)
-    await state.clear()
     user = await set_user(tg_id=message.from_user.id,
                           username=message.from_user.username,
                           full_name=message.from_user.full_name)

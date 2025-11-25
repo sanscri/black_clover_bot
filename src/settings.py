@@ -8,6 +8,11 @@ class Settings(BaseSettings):
   DB_PASS: str
   DB_NAME: str
   ADMINS: str
+  CHANNEL_URL: str
+  GROUP_URL: str
+  RULES_URL: str
+  TUTORIAL_URL: str
+
 
   @property
   def get_db_url(self):
