@@ -11,15 +11,13 @@ from pathlib import Path
 
 from keyboards.reply_profile_kb import main_profile_kb
 
-help_router = Router()
+grimoire_router = Router()
 
-@help_router.message(Command("help"))
-async def cmd_start(message: Message, state: FSMContext):
+@grimoire_router.message(Command("grimoire"))
+async def cmd_grimoire(message: Message, state: FSMContext):
   
-    help = f"""
-    ℹ️ Информационная справка
-    Этот бот предназначен для игры в мире, основанном на манге \"Чёрный Клевер\" Юки Табаты. 
-    Важную информацию вы можете найти ниже.
+    info = f"""
+    Гримуар
     """
-    await message.answer(help,
+    await message.answer(info,
                               reply_markup=help_kb())

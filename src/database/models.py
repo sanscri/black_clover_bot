@@ -1,5 +1,5 @@
 import enum
-from sqlalchemy import BigInteger, Enum, Integer, Text, ForeignKey, String, Float
+from sqlalchemy import BigInteger, Enum, Integer, Text, ForeignKey, String, Float, Boolean
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 from sqlalchemy.dialects.postgresql import ENUM as PgEnum
 from .database import Base
@@ -14,8 +14,27 @@ class User(Base):
     full_name: Mapped[str] = mapped_column(String, nullable=True)
 
 
-class UserStats(Base):
-    __tablename__ = 'stats'
+class Avatar(Base):
+    __tablename__ = 'avatar'
+     
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+
+    race_id: Mapped[int] = mapped_column(ForeignKey("races.id"))
+    race: Mapped["Race"] = relationship(back_populates="avatar")
+
+    stats_id: Mapped[int] = mapped_column(ForeignKey("avatar_stats.id"))
+    stats: Mapped["AvatarStats"] = relationship(back_populates="avatar")
+
+    grimoire_id: Mapped[int] = mapped_column(ForeignKey("grimoire.id"))
+    grimoire: Mapped["Grimoire"] = relationship(back_populates="avatar")
+
+
+    inventory_id: Mapped[int] = mapped_column(ForeignKey("inventories.id"))
+    Inventory: Mapped["Inventory"] = relationship(back_populates="avatar")
+
+
+class AvatarStats(Base):
+    __tablename__ = 'avatar_stats'
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     current_hp: Mapped[int] = mapped_column(BigInteger, nullable=False)
@@ -30,12 +49,25 @@ class UserStats(Base):
     crit_chance:  Mapped[float] = mapped_column(Float, nullable=False)
     crit_damage:  Mapped[float] = mapped_column(Float, nullable=False)
 
+    avatar: Mapped["Avatar"] = relationship(back_populates="avatar_stats")
+
 class Race(Base):
     __tablename__ = 'races'
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String, nullable=False)
     description: Mapped[str] = mapped_column(String, nullable=False)
+
+    avatar: Mapped["Avatar"] = relationship(back_populates="races")
+
+class Inventory(Base):
+    __tablename__ = 'inventories'
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    name: Mapped[str] = mapped_column(String, nullable=False)
+    description: Mapped[str] = mapped_column(String, nullable=False)
+
+    avatar: Mapped["Avatar"] = relationship(back_populates="inventories")
 
 
 class Devil(Base):
@@ -58,6 +90,8 @@ class Grimoire(Base):
     __tablename__ = 'grimoire'
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+
+    avatar: Mapped["Avatar"] = relationship(back_populates="grimoire")
 
 
 class MagicAttribute(Base):
@@ -103,8 +137,12 @@ class Item(Base):
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String, nullable=True)
-    status: Mapped[RarityEnum] = mapped_column(PgEnum(RarityEnum, name='rarity', create_type=False), nullable=False, default=RarityEnum.GARBAGE)
-
+    rarity: Mapped[RarityEnum] = mapped_column(PgEnum(RarityEnum, name='rarity', create_type=False), nullable=False, default=RarityEnum.GARBAGE)
+    edible: Mapped[bool] = mapped_column(Boolean, nullable=False)
+    used: Mapped[bool] = mapped_column(Boolean, nullable=False)
+    cookable: Mapped[bool] = mapped_column(Boolean, nullable=False)
+    partOfCraft: Mapped[bool] = mapped_column(Boolean, nullable=False)
+    craftable: Mapped[bool] = mapped_column(Boolean, nullable=False)
 
 
 class Country(Base):
