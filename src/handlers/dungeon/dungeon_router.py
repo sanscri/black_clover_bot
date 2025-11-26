@@ -2,9 +2,6 @@ from aiogram import Router, F
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
-from aiogram.utils.formatting import Text, Bold, as_line, as_list
-
-from keyboards.reply_profile_kb import main_profile_kb
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 
 dungeon_router = Router()

@@ -2,14 +2,24 @@ from aiogram import Router, F
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
-from aiogram.utils.formatting import Text, Bold, as_line, as_list
+from aiogram.utils.formatting import Bold, as_line, as_list
+from aiogram.fsm.state import StatesGroup, State
 
-from keyboards.reply_profile_kb import main_profile_kb
-
+from keyboards.reply_profile_kb import profile_kb
 profile_router = Router()
 
+
+
+class ProfileStates(StatesGroup):
+    content = State()  # Ожидаем любое сообщение от пользователя
+    check_state = State()  # Финальна проверка
+
+
+
 @profile_router.message(Command("profile"))
+@profile_router.message(F.text == '👤Профиль')
 async def cmd_profile(message: Message, state: FSMContext):
+    await state.clear()
     name = "Тест"
     sex = ""
     age = ""
@@ -52,5 +62,17 @@ async def cmd_profile(message: Message, state: FSMContext):
                         as_line(Bold("👛Кошелёк"), "🟤", "⚪️", "🔵", "🟡", "🪙", end="", sep=": "),
                         )
   
-    await message.answer(**content.as_kwargs())
+    await message.answer(**content.as_kwargs(), reply_markup=profile_kb())
     
+
+@profile_router.message(F.text == '📕 Гримуар')
+async def cmd_profile(message: Message, state: FSMContext):
+    await state.clear()
+ 
+    userId = "Тест"
+    magicType = "Тест"
+    content =  as_list(as_line(Bold("📕 Гримуар")),
+                        as_line(Bold("🆔Ваш id"), userId, end="", sep=": "),
+                        as_line(Bold("🃏Магический атрибут"), magicType, end="", sep=": "),
+                        )
+    await message.answer(**content.as_kwargs(), reply_markup=profile_kb())

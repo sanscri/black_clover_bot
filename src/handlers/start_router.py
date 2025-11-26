@@ -9,7 +9,6 @@ from create_bot import bot, dp, admins
 from pathlib import Path
 from create_bot import logger
 from settings import settings
-from keyboards.reply_profile_kb import main_profile_kb
 from filters.chat_type import ChatTypeFilter
 start_router = Router()
 
@@ -50,13 +49,6 @@ async def main_menu_process(call: CallbackQuery, state: FSMContext):
     await call.answer('Вы вернулись в главное меню.')
     await call.message.answer(f"Привет, {call.from_user.full_name}! Выбери необходимое действие",
                               reply_markup=main_kb())
-
-
-@start_router.message(F.text == '👤Профиль')
-async def cmd_start(message: Message, state: FSMContext):
-    await state.clear()
-    profile = f"Ваш профиль"
-    await message.answer(profile, reply_markup=main_profile_kb())
 
 
 

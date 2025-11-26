@@ -1,12 +1,12 @@
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 
-def main_profile_kb():
+
+def profile_kb():
     kb_list = [
-        [KeyboardButton(text="Характеристики"), KeyboardButton(text="Ремесло")],
-        [KeyboardButton(text="Инвентарь"), KeyboardButton(text="Навыки")],
-        [KeyboardButton(text="Задания"), KeyboardButton(text="Достижения")],
-        [KeyboardButton(text="Дом"), KeyboardButton(text="Задания")],
-        [KeyboardButton(text="🔙Назад")]
+        [KeyboardButton(text="📕 Гримуар"), KeyboardButton(text="⚙️ Статы"), KeyboardButton(text="🛠 Ремесло")],
+        [KeyboardButton(text="📃 Контракты"),  KeyboardButton(text="👛 Кошелёк"), KeyboardButton(text="🎒 Инвентарь")],
+        [KeyboardButton(text="📖 Навыки"), KeyboardButton(text="🏆 Достижения"), KeyboardButton(text="🏠 Дом")],
+        [KeyboardButton(text="👤Профиль"), KeyboardButton(text="🔙Назад")]
     ]
     return ReplyKeyboardMarkup(
         keyboard=kb_list,
