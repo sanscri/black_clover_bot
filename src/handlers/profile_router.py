@@ -26,7 +26,8 @@ async def cmd_profile(message: Message, state: FSMContext):
     wisdom = ""
     charisma = ""
     strength = ""
- 
+    crit_chance = ""
+    crit_damage = ""
     content =  as_list(as_line(Bold("ПРОФИЛЬ")),
                         as_line(Bold("🆔Ваш id"), userId, end="", sep=": "),
                         as_line(Bold("🏷️Имя"), name, end="", sep=": "),
@@ -38,12 +39,16 @@ async def cmd_profile(message: Message, state: FSMContext):
                         as_line(Bold("🏆Уровень персонажа"), level, end="", sep=": "),
                         as_line(Bold("♥️Здоровье"), health, end="", sep=": "),
                         as_line(Bold("🌀Магическая сила"), magicPower, end="", sep=": "),
-                        as_line(Bold("🤪Здравомысли"), sanity, end="", sep=": "),
+                        as_line(Bold("🤪Здравомыслие"), sanity, end="", sep=": "),
+                        as_line(Bold("⚔️Атака"), constitution, end="", sep=": "),
+                        as_line(Bold("🛡️Защита"), intelligence, end="", sep=": "),
                         as_line(Bold("🏋️Телосложение"), constitution, end="", sep=": "),
                         as_line(Bold("🎓Интеллект"), intelligence, end="", sep=": "),
                         as_line(Bold("📚Мудрость"), wisdom, end="", sep=": "),
                         as_line(Bold("💪Сила"), strength, end="", sep=": "),
                         as_line(Bold("🗣Харизма"), charisma, end="", sep=": "),
+                        as_line(Bold("🎯Шанс критического удара"), crit_chance, end="", sep=": "),
+                        as_line(Bold("💥Урон от критического удара"), crit_damage, end="", sep=": "),
                         as_line(Bold("👛Кошелёк"), "🟤", "⚪️", "🔵", "🟡", "🪙", end="", sep=": "),
                         )
   
