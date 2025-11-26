@@ -1,7 +1,7 @@
 from aiogram import Router, F
 from aiogram.filters import CommandStart
 from aiogram.fsm.context import FSMContext
-from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardRemove, ReplyKeyboardMarkup
 from database.dao import set_user
 from keyboards.reply_other_kb import main_kb
 from aiogram.types import FSInputFile
@@ -10,13 +10,14 @@ from pathlib import Path
 from create_bot import logger
 from settings import settings
 from keyboards.reply_profile_kb import main_profile_kb
-
+from filters.chat_type import ChatTypeFilter
 start_router = Router()
 
 
+
 @start_router.message(F.text == '🔙Назад')
-@start_router.message(CommandStart())
-async def cmd_start(message: Message, state: FSMContext):
+@start_router.message(ChatTypeFilter(chat_type=["private"]),CommandStart())
+async def cmd_private_start(message: Message, state: FSMContext):
     await state.clear()
     BASE_DIR = Path(__file__).parent.parent.parent
     WELCOME_IMAGE_PATH = BASE_DIR / "assets" / "hello.jpg"
@@ -29,6 +30,12 @@ async def cmd_start(message: Message, state: FSMContext):
 
     photo = FSInputFile(WELCOME_IMAGE_PATH)
     await message.answer_photo(photo=photo, caption=greeting, reply_markup=main_kb())
+
+@start_router.message(ChatTypeFilter(chat_type=["group", "supergroup"]),CommandStart())
+async def cmd_start(message: Message, state: FSMContext):
+    await state.clear()
+    greeting = f"Привет, путник!"
+    await message.answer(greeting, reply_markup=ReplyKeyboardRemove())
 
 @start_router.message(F.text == '❌ Остановить сценарий')
 async def stop_fsm(message: Message, state: FSMContext):

@@ -24,6 +24,8 @@
 
 /stats - статистика
 
+/map - карта
+
 /help - помощь
 
 ## Контакты
@@ -32,4 +34,5 @@
 
 Официальные правила: [ссылка](https://teletype.in/@black_clover)
 
+Бот для предложений: [ссылка](https://undocumentedFeaturesBot)
 Бот: ссылки пока нет

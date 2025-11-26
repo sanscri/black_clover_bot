@@ -13,7 +13,7 @@ class Settings(BaseSettings):
   GROUP_URL: str
   RULES_URL: str
   TUTORIAL_URL: str
-
+  SUPPORT_URL: str
 
   @property
   def get_db_url(self):
