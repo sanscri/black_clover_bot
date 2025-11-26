@@ -1,13 +1,14 @@
 from aiogram import Router, F
 from aiogram.filters import CommandStart
 from aiogram.fsm.context import FSMContext
-from aiogram.types import Message, CallbackQuery
+from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 from database.dao import set_user
 from keyboards.reply_other_kb import main_kb
 from aiogram.types import FSInputFile
 from create_bot import bot, dp, admins
 from pathlib import Path
-
+from create_bot import logger
+from settings import settings
 from keyboards.reply_profile_kb import main_profile_kb
 
 start_router = Router()
@@ -49,3 +50,26 @@ async def cmd_start(message: Message, state: FSMContext):
     await state.clear()
     profile = f"Ваш профиль"
     await message.answer(profile, reply_markup=main_profile_kb())
+
+
+
+# Функция проверки подписки
+async def is_subscribed(user_id: int) -> bool:
+    try:
+        member = await bot.get_chat_member(chat_id=settings.CHANNEL_ID, user_id=user_id)
+        return member.status in ["member", "administrator", "creator"]
+    except Exception as e:
+        logger.error(f"Error checking subscription: {e}")
+        return False
+
+
+# Клавиатура для подписки
+def get_subscribe_keyboard():
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(text="Подписаться на канал", url=settings.CHANNEL_URL),
+                InlineKeyboardButton(text="✅ Я подписался", callback_data="check_sub")
+            ]
+        ]
+    )

@@ -8,6 +8,7 @@ class Settings(BaseSettings):
   DB_PASS: str
   DB_NAME: str
   ADMINS: str
+  CHANNEL_ID: str
   CHANNEL_URL: str
   GROUP_URL: str
   RULES_URL: str

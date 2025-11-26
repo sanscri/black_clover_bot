@@ -14,23 +14,30 @@ class User(Base):
     full_name: Mapped[str] = mapped_column(String, nullable=True)
 
 
+class Role(Base):
+    __tablename__ = 'roles'
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    name: Mapped[str] = mapped_column(String, nullable=False)
+
+
 class Avatar(Base):
-    __tablename__ = 'avatar'
+    __tablename__ = 'avatars'
      
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
 
     race_id: Mapped[int] = mapped_column(ForeignKey("races.id"))
-    race: Mapped["Race"] = relationship(back_populates="avatar")
+    race: Mapped["Race"] = relationship(back_populates="avatars")
 
     stats_id: Mapped[int] = mapped_column(ForeignKey("avatar_stats.id"))
-    stats: Mapped["AvatarStats"] = relationship(back_populates="avatar")
+    stats: Mapped["AvatarStats"] = relationship(back_populates="avatars")
 
     grimoire_id: Mapped[int] = mapped_column(ForeignKey("grimoire.id"))
-    grimoire: Mapped["Grimoire"] = relationship(back_populates="avatar")
+    grimoire: Mapped["Grimoire"] = relationship(back_populates="avatars")
 
 
     inventory_id: Mapped[int] = mapped_column(ForeignKey("inventories.id"))
-    Inventory: Mapped["Inventory"] = relationship(back_populates="avatar")
+    Inventory: Mapped["Inventory"] = relationship(back_populates="avatars")
 
 
 class AvatarStats(Base):

@@ -4,6 +4,8 @@ from aiogram.types import BotCommand, BotCommandScopeDefault
 
 from handlers.start_router import start_router
 from handlers.grimoire_router import grimoire_router
+from handlers.battle_router import battle_router
+from handlers.dungeon.dungeon_router import dungeon_router
 from handlers.profile_router import profile_router
 from handlers.help_router import help_router
 
@@ -35,6 +37,8 @@ async def stop_bot():
 async def main():
     # регистрация роутеров
     dp.include_router(start_router)
+    dp.include_router(dungeon_router)
+    dp.include_router(battle_router)
     dp.include_router(grimoire_router)
     dp.include_router(profile_router)
     dp.include_router(help_router)
