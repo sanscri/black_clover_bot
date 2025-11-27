@@ -14,6 +14,9 @@ class User(Base):
     username: Mapped[str] = mapped_column(String, nullable=True)
     full_name: Mapped[str] = mapped_column(String, nullable=True)
 
+    avatar_id: Mapped[int] = mapped_column(ForeignKey("avatars.id"))
+    avatar: Mapped["Avatar"] = relationship("Avatar", back_populates="user")
+
 
 class Role(Base):
     __tablename__ = 'roles'
@@ -40,6 +43,10 @@ class Avatar(Base):
     race_id: Mapped[int] = mapped_column(ForeignKey("races.id"))
     race: Mapped["Race"] = relationship("Race",back_populates="avatars")
 
+    country_id: Mapped[int] = mapped_column(ForeignKey("countries.id"))
+    country: Mapped["Country"] = relationship("Country",back_populates="avatars")
+
+
     stats_id: Mapped[int] = mapped_column(ForeignKey("avatar_stats.id"))
     stats: Mapped["AvatarStats"] = relationship(back_populates="avatar")
 
@@ -49,6 +56,9 @@ class Avatar(Base):
 
     inventory_id: Mapped[int] = mapped_column(ForeignKey("inventories.id"))
     inventory: Mapped["Inventory"] = relationship(back_populates="avatar")
+
+
+    user: Mapped["User"] = relationship(back_populates="avatar")
 
 
 class AvatarStats(Base):
@@ -160,6 +170,11 @@ class Country(Base):
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String, nullable=True)
+    full_name: Mapped[str] = mapped_column(String, nullable=True)
+    description:  Mapped[str] = mapped_column(String, nullable=True)
+    symbol: Mapped[str] = mapped_column(String, nullable=True)
+
+    avatars: Mapped[list["Avatar"]] = relationship("Avatar", back_populates="country")
 
 
 class Region(Base):

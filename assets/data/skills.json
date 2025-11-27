@@ -1,0 +1,1552 @@
+{
+  "skills": [
+    {
+      "name": "🗡Управление оружием",
+      "description": "",
+      "children": [
+        {
+          "name": "🗡Режущее",
+          "description": "Определяет урон, наносимый режущим оружием.",
+          "influence": ["Наносимый урон режущим оружием и заклинаниями с типом урона: \"Режущий\";"],
+          "training": ["Использовать режущее оружие"],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🪓Рубящее",
+          "description": "Определяет урон, наносимый рубящим оружием.",
+          "influence": ["Наносимый урон рубящим оружием;"],
+          "training": ["Использовать рубящее оружие;"],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🔨Дробящее",
+          "description": "Определяет урон, наносимый дробящим оружием.",
+          "influence": ["Наносимый урон дробящим оружием;"],
+          "training": ["Использовать дробящее оружие;"],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🦯Колющее",
+          "description": "Определяет урон, наносимый колющим оружием.",
+          "influence": ["Наносимый урон колющим оружием;"],
+          "training": ["Использовать колющее оружие;"],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🛠Ремесло",
+      "description": "",
+      "children": [
+        {
+          "name": "⚙️Общее ремесло",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🗡Ковка оружия",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🪖Ковка брони",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🍳Кулинария",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🎣 Рыбалка",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "⛏Шахтёр",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🏹Охотник",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🌽Фермер",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🔬 Наука",
+      "description": "",
+      "children": [
+        {
+          "name": "🛠Инженерия",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "💼Изобретатель",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🏥Медицина",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🧪Зельеварение",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "🔨Алхимик",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        },
+        {
+          "name": "📜Рецептолог",
+          "description": "",
+          "influence": [""],
+          "training": [""],
+          "levels": [
+            {
+              "name": "Новичок 2-го уровня",
+              "description": "",
+              "level": 1,
+              "minValue": 0,
+              "maxValue": 100
+            },
+            {
+              "name": "Новичок 1-го уровня",
+              "description": "",
+              "level": 2,
+              "minValue": 101,
+              "maxValue": 300
+            },
+            {
+              "name": "Ученик 2-го уровня",
+              "description": "",
+              "level": 3,
+              "minValue": 301,
+              "maxValue": 600
+            },
+            {
+              "name": "Ученик 1-го уровня",
+              "description": "",
+              "level": 4,
+              "minValue": 601,
+              "maxValue": 1200
+            },
+            {
+              "name": "Послушник 2-го уровня",
+              "description": "",
+              "level": 5,
+              "minValue": 1201,
+              "maxValue": 1800
+            },
+            {
+              "name": "Послушник 1-го уровня",
+              "description": "",
+              "level": 6,
+              "minValue": 1801,
+              "maxValue": 2500
+            },
+            {
+              "name": "Подмастерье 2-го уровня",
+              "description": "",
+              "level": 7,
+              "minValue": 2501,
+              "maxValue": 3200
+            },
+            {
+              "name": "Мастер 2-го уровня",
+              "description": "",
+              "level": 8,
+              "minValue": 3200,
+              "maxValue": 4000
+            },
+            {
+              "name": "Мастер 1-го уровня",
+              "description": "",
+              "level": 9,
+              "minValue": 4001,
+              "maxValue": 4800
+            },
+            {
+              "name": "Грандмастер",
+              "description": "",
+              "level": 10,
+              "minValue": 4801,
+              "maxValue": 6000
+            },
+            {
+              "name": "Магистр",
+              "description": "",
+              "level": 11,
+              "minValue": 6001,
+              "maxValue": 6002
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

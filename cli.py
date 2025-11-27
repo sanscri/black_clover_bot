@@ -5,9 +5,8 @@ import typer
 
 from database.seeds.roles_seeder import seed_roles
 from database.seeds.races_seeder import seed_races
-from settings import settings
+from database.seeds.map_seeder import seed_map
 from database.base import connection
-from sqlalchemy.ext.asyncio import AsyncAttrs, async_sessionmaker, create_async_engine, AsyncSession
 cli = typer.Typer()
 
 
@@ -26,7 +25,9 @@ def roles():
 def races():
     asyncio.run(run_seed(seed_races))
 
-
+@cli.command()
+def map():
+    asyncio.run(run_seed(seed_map))
 
 if __name__ == '__main__':
     cli()

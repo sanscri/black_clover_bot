@@ -1,0 +1,84 @@
+{
+  "magic": [
+    {
+      "name": "Огонь",
+      "type": [
+        "FIRE"
+      ],
+      "efficiency": [
+        {
+          "name": "Вода",
+          "coefficient": 1
+        },
+        {
+          "name": "Земля",
+          "coefficient": 2
+        },
+        {
+          "name": "Воздух",
+          "coefficient": 3
+        }
+      ]
+    },
+    {
+      "name": "Вода",
+      "type": [
+        "WATER"
+      ],
+      "efficiency": [
+        {
+          "name": "Огонь",
+          "coefficient": 1
+        },
+        {
+          "name": "Земля",
+          "coefficient": 2
+        },
+        {
+          "name": "Воздух",
+          "coefficient": 3
+        }
+      ]
+    },
+    {
+      "name": "Земля",
+      "type": [
+        "EARTH"
+      ],
+      "efficiency": [
+        {
+          "name": "Огонь",
+          "coefficient": 2
+        },
+        {
+          "name": "Вода",
+          "coefficient": 1
+        },
+        {
+          "name": "Воздух",
+          "coefficient": 3
+        }
+      ]
+    },
+    {
+      "name": "Воздух",
+      "type": [
+        "AIR"
+      ],
+      "efficiency": [
+        {
+          "name": "Огонь",
+          "coefficient": 3
+        },
+        {
+          "name": "Вода",
+          "coefficient": 1
+        },
+        {
+          "name": "Земля",
+          "coefficient": 2
+        }
+      ]
+    }
+  ]
+}

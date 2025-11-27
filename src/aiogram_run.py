@@ -1,6 +1,6 @@
 import asyncio
 from create_bot import bot, dp, admins
-from aiogram.types import BotCommand, BotCommandScopeAllPrivateChats, BotCommandScopeAllGroupChats
+from aiogram.types import BotCommand, BotCommandScopeAllPrivateChats, BotCommandScopeAllGroupChats, BotCommandScopeUnion
 
 from handlers.start_router import start_router
 from handlers.grimoire_router import grimoire_router

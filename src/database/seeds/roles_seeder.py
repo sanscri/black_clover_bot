@@ -1,4 +1,3 @@
-# roles_seeder.py
 import json
 import os
 

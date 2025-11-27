@@ -1,0 +1,931 @@
+{
+    "rules": {
+        "lore": [
+            "Вы провели ритуал, используя запрещенную магию, чтобы заключить контракт с демоном и получить его силу. Магов с этой силой обычно боится общественность из-за использования магии подземного мира и развращения их сердец."
+        ],
+        "10_union": {
+            "name": "10% союз с дьяволом",
+            "description": " "
+        },
+        "25_union": {
+            "name": "",
+            "description": ""
+        },
+        "50_union": {
+            "name": "",
+            "description": ""
+        },
+        "65_union": {
+            "name": "",
+            "description": ""
+        },
+        "80_union": {
+            "name": "",
+            "description": ""
+        }
+    },
+  "devils": [  
+    {
+    "name": "Нахема",
+    "description": "Нахема - дьявол с первого этажа преисподней. Любит играть с гостями, пироман. Рекомендуем вызывать в местах, где нечему гореть. Хотяяяя... Это вам не особо поможет. Но хоть не сразу сгорите до тла.",
+    "floor": "1",
+    "rank": "1",
+    "image_path": "/qlipoth/highest/nahamah/profile.webp",
+    "magic_type": "магия огня",
+    "union_10": {     
+        "spells": [
+            {
+                "name": "",
+                "description": "",
+                "range": "",
+                "duration": "",
+                "cost": "",
+                "castTime": ""
+            }
+        ]
+    },
+    "union_25": {
+        "spells": [
+            {
+                "name": "",
+                "description": "",
+                "range": "",
+                "duration": "",
+                "cost": "",
+                "castTime": ""
+            }
+        ]
+    },
+    "union_50": {
+        "spells": [
+            {
+                "name": "",
+                "description": "",
+                "range": "",
+                "duration": "",
+                "cost": "",
+                "castTime": ""
+            }
+        ]
+    },
+    "union_65": {
+        "spells": [
+            {
+                "name": "",
+                "description": "",
+                "range": "",
+                "duration": "",
+                "cost": "",
+                "castTime": ""
+            }
+        ]
+    },
+    "union_80": {
+        "spells": [
+            {
+                "name": "",
+                "description": "",
+                "range": "",
+                "duration": "",
+                "cost": "",
+                "castTime": ""
+            }
+        ]
+    },
+    "union_100": {
+        "spells": [
+            {
+                "name": "",
+                "description": "",
+                "range": "",
+                "duration": "",
+                "cost": "",
+                "castTime": ""
+            }
+        ]
+    }},
+    {
+        "name": "Лилит",
+        "description": "Лилит - дьявол с первого этажа преисподней. Любит лёд, ночь и холодные напитки. А также играть вместе с Нахемой в прятки ночью. Не вызывайте рядом с водоёмами или в дождь. Но в принципе, как и с Нахемой, это вам тоже не особо поможет.",
+        "floor": "1",
+        "rank": "1",
+        "image_path": "/qlipoth/highest/lilith/1.jpg",
+        "magic_type": "магия льда",
+        "union_10": {    
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_25": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_50": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_65": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_80": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_100": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Адрамлелех",
+        "description": "Дьявол со втрого этажа. Загаодчный тип. Дьявологии этого мира мало что о нём известно, известна лишь внешность, но не осталось а мире живых, кто может нам рассказать о способностях.",
+        "floor": "2",
+        "rank": "1",
+        "image_path": "/qlipoth/highest/adramelech/profile.webp",
+        "magic_type": "магия света",
+        "union_10": {      
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_25": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_50": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_65": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_80": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_100": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Баал",
+        "description": "Дьявол с третьего этажа. При его вызывании в комнате стало жарковато, душновато и стали кости ныть (что-то погода начала меняться). Никто не может описать его внешность, так как облака, образовавшиеся рядом с вами, загораживают обзор, а люди, заключившие с ним контракт, не хотят делиться, как выглядит дьявол.",
+        "floor": "3",
+        "rank": "1",
+        "image_path": "/qlipoth/highest/baal/profile.webp",
+        "magic_type": "магия погоды",
+        "union_10": {      
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_25": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_50": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_65": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_80": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_100": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Люцифугус",
+        "description": "Дьявол с шестого этажа. Дьявол, поддеоживающий великих правителей преисподней. Аккуратнее с ним, он высосет из вас жизнь.",
+        "floor": "6",
+        "rank": "1",
+        "image_path": "/qlipoth/highest/lucifugus/profile.jpeg",
+        "magic_type": "магия тьмы",
+        "union_10": {       
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_25": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_50": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_65": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_80": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_100": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Вельзевул",
+        "description": "Дьявол с последнего этажа преисподней. О характере мало что известно. Он не людит особо общаться с людьми, а также кнему часто обращаются люди с замкнутым характером.",
+        "floor": "7",
+        "rank": "1",
+        "image_path": "/qlipoth/highest/beelzebub/profile.webp",
+        "magic_type": "магия пространства",
+        "union_10": {   
+            "spells": [
+                {
+                    "name": "",
+                    "description": "О",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_25": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                },
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+    
+            ]
+        },
+        "union_50": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_65": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_80": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_100": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Астарот",
+        "description": "Дьявол с последнего этажа. Любит наблюдать и рассказывать истории. Он много что видел, много что знает, он вам может рассказать, но осторожнее, его можно заслушаться. И вы уверены, что всё, что он вам говорит, это правда?",
+        "floor": "7",
+        "rank": "1",
+        "image_path": "/qlipoth/highest/astaroth/TBA.webp",
+        "magic_type": "магия времени",
+        "union_10": {   
+            "spells": [
+                {
+                    "name": "М",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+    
+        ]
+        },
+        "union_25": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                },
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_50": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_65": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_80": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_100": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Люциферо",
+        "description": "Король дьяволов. Не подходите к нему без должной подговки, вы же не хотите быть раздавленными, верно?",
+        "floor": "7",
+        "rank": "1",
+        "magic_type": "магия гравитации",
+        "image_path": "/qlipoth/highest/lucifero/profile.webp",
+        "union_10": {   
+            "max_magic_power": "10",
+            "description": "",
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "damage": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_25": {
+            "max_magic_power": "",
+            "description": "",
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "damage": "",
+                    "castTime": ""
+                },
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "damage": "",
+                    "castTime": ""
+                   }
+            ]
+        },
+        
+        "union_50": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "damage": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_65": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "damage": "",
+                    "castTime": ""
+                },
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "damage": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_80": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "damage": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_100": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "damage": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Загред",
+        "description": "",
+        "floor": "7",
+        "rank": "2",
+        "image_path": "/qlipoth/high/zagred/profile.jpg",
+        "magic_type": "магия души слова",
+        "union_10": {     
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_25": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_50": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_65": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_80": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_100": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        }
+    },
+    {
+        "name": "Мегикула",
+        "description": "",
+        "floor": "7",
+        "rank": "1",
+        "magic_type": "магия проклятий",
+
+        "image_path": "/qlipoth/highest/megicula/profile.webp",
+        "health": "",
+        "union_10": {
+               "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                },
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                },
+                {
+                    "name": "",
+                    "description": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_25": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                },
+                {
+                    "name": "",
+                    "description": ".",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                },
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                },
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+    
+      "union_50": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_65": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_80": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        },
+        "union_100": {
+            "spells": [
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                },
+                {
+                    "name": "",
+                    "description": "",
+                    "range": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                },
+                {
+                    "name": "",
+                    "description": "",
+                    "duration": "",
+                    "cost": "",
+                    "castTime": ""
+                }
+            ]
+        }
+    }]
+}

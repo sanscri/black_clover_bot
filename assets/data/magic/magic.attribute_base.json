@@ -1,0 +1,20 @@
+{
+  "magic": [
+    {
+      "name": "Огонь",
+      "type": ["FIRE"]
+    },
+    {
+      "name": "Вода",
+      "type": ["WATER"]
+    },
+    {
+      "name": "Земля",
+      "type": ["EARTH"]
+    },
+    {
+      "name": "Воздух",
+      "type": ["AIR"]
+    }
+  ]
+}
