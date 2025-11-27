@@ -38,6 +38,7 @@ async def cmd_profile(message: Message, state: FSMContext):
     strength = ""
     crit_chance = ""
     crit_damage = ""
+    motivation = ""
     content =  as_list(as_line(Bold("ПРОФИЛЬ")),
                         as_line(Bold("🆔Ваш id"), userId, end="", sep=": "),
                         as_line(Bold("🏷️Имя"), name, end="", sep=": "),
@@ -50,6 +51,7 @@ async def cmd_profile(message: Message, state: FSMContext):
                         as_line(Bold("♥️Здоровье"), health, end="", sep=": "),
                         as_line(Bold("🌀Магическая сила"), magicPower, end="", sep=": "),
                         as_line(Bold("🤪Здравомыслие"), sanity, end="", sep=": "),
+                        as_line(Bold("⚡️ Мотивация"), motivation, end="", sep=": ")
                         as_line(Bold("⚔️Атака"), constitution, end="", sep=": "),
                         as_line(Bold("🛡️Защита"), intelligence, end="", sep=": "),
                         as_line(Bold("🏋️Телосложение"), constitution, end="", sep=": "),

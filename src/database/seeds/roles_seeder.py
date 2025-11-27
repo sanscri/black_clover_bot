@@ -11,26 +11,27 @@ from database.models import Role
 async def seed_roles(session: AsyncSession):
     try:
         json_path = os.path.join(
-            os.path.dirname(__file__), 'data', 'roles.json'
+            os.path.dirname(__file__), '..', '..', '..', 'assets', 'data', 'roles.json'
         )
-        with open(json_path, 'r') as file:
+        with open(json_path, 'r', encoding='utf-8') as file:
             roles_to_seed = json.load(file)
-
+        print(roles_to_seed)
         for role_data in roles_to_seed:
-            role_name = role_data.get('role')
+            print(role_data)
+            role_name = role_data.get('name')
 
             if not role_name:
-                print("[-] Skipping invalid role data: missing 'role'.")
+                print("[-] Skipping invalid role data: missing 'name'.")
                 continue
 
             existing_role_query = await session.execute(
-                select(Role).where(Role.role == role_name)
+                select(Role).where(Role.name == role_name)
             )
             existing_role = existing_role_query.scalars().first()
 
             if not existing_role:
                 print(f"[+] Creating new role '{role_name}'.")
-                new_role = Role(role=role_name)
+                new_role = Role(name=role_name)
                 session.add(new_role)
 
         await session.commit()

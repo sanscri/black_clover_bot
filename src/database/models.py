@@ -1,5 +1,6 @@
 import enum
-from sqlalchemy import BigInteger, Enum, Integer, Text, ForeignKey, String, Float, Boolean
+from typing import List
+from sqlalchemy import BigInteger, Column, Enum, Integer, Table, Text, ForeignKey, String, Float, Boolean
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 from sqlalchemy.dialects.postgresql import ENUM as PgEnum
 from .database import Base
@@ -21,23 +22,33 @@ class Role(Base):
     name: Mapped[str] = mapped_column(String, nullable=False)
 
 
+class Race(Base):
+    __tablename__ = 'races'
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    name: Mapped[str] = mapped_column(String, nullable=False)
+    description: Mapped[str] = mapped_column(String, nullable=False)
+
+    avatars: Mapped[list["Avatar"]] = relationship("Avatar",back_populates="race")
+
+
 class Avatar(Base):
     __tablename__ = 'avatars'
      
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
 
     race_id: Mapped[int] = mapped_column(ForeignKey("races.id"))
-    race: Mapped["Race"] = relationship(back_populates="avatars")
+    race: Mapped["Race"] = relationship("Race",back_populates="avatars")
 
     stats_id: Mapped[int] = mapped_column(ForeignKey("avatar_stats.id"))
-    stats: Mapped["AvatarStats"] = relationship(back_populates="avatars")
+    stats: Mapped["AvatarStats"] = relationship(back_populates="avatar")
 
     grimoire_id: Mapped[int] = mapped_column(ForeignKey("grimoire.id"))
-    grimoire: Mapped["Grimoire"] = relationship(back_populates="avatars")
+    grimoire: Mapped["Grimoire"] = relationship(back_populates="avatar")
 
 
     inventory_id: Mapped[int] = mapped_column(ForeignKey("inventories.id"))
-    Inventory: Mapped["Inventory"] = relationship(back_populates="avatars")
+    inventory: Mapped["Inventory"] = relationship(back_populates="avatar")
 
 
 class AvatarStats(Base):
@@ -56,16 +67,8 @@ class AvatarStats(Base):
     crit_chance:  Mapped[float] = mapped_column(Float, nullable=False)
     crit_damage:  Mapped[float] = mapped_column(Float, nullable=False)
 
-    avatar: Mapped["Avatar"] = relationship(back_populates="avatar_stats")
+    avatar: Mapped["Avatar"] = relationship(back_populates="stats")
 
-class Race(Base):
-    __tablename__ = 'races'
-
-    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
-    name: Mapped[str] = mapped_column(String, nullable=False)
-    description: Mapped[str] = mapped_column(String, nullable=False)
-
-    avatar: Mapped["Avatar"] = relationship(back_populates="races")
 
 class Inventory(Base):
     __tablename__ = 'inventories'
@@ -74,7 +77,7 @@ class Inventory(Base):
     name: Mapped[str] = mapped_column(String, nullable=False)
     description: Mapped[str] = mapped_column(String, nullable=False)
 
-    avatar: Mapped["Avatar"] = relationship(back_populates="inventories")
+    avatar: Mapped["Avatar"] = relationship(back_populates="inventory")
 
 
 class Devil(Base):
@@ -172,24 +175,35 @@ class City(Base):
     name: Mapped[str] = mapped_column(String, nullable=True)
 
 
+road = Table(
+    "road",
+    Base.metadata,
+    Column("source_id", Integer, ForeignKey("locations.id"), primary_key=True),
+    Column("target_id", Integer, ForeignKey("locations.id"), primary_key=True),
+)
+
+
 class Location(Base):
     __tablename__ = 'locations'
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String, nullable=True)
-    roads: Mapped[list["Road"]] = relationship("Roads", back_populates="locations", cascade="all, delete-orphan")
-
-class Road(Base):
-    __tablename__ = 'roads'
-
-    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     duration: Mapped[str] = mapped_column(String, nullable=True)
 
-    source_id: Mapped[int] = mapped_column(ForeignKey("locations.id"))
-    source: Mapped["Location"] = relationship("Location", back_populates="roads")
-
-    target_id: Mapped[int] = mapped_column(ForeignKey("locations.id"))
-    target: Mapped["Location"] = relationship("Location", back_populates="roads")
+    source: Mapped[List["Location"]] = relationship(
+        "Location",
+        secondary=road,
+        primaryjoin=id == road.c.source_id,
+        secondaryjoin=id == road.c.target_id,
+        back_populates="source",
+    )
+    target: Mapped[List["Location"]] = relationship(
+        "Location",
+        secondary=road,
+        primaryjoin=id == road.c.target_id,
+        secondaryjoin=id == road.c.source_id,
+        back_populates="target",
+    )
 
 
 class ArmedForces(Base):
