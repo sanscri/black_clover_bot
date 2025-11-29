@@ -1,14 +1,16 @@
 import asyncio
 from create_bot import bot, dp, admins
 from aiogram.types import BotCommand, BotCommandScopeAllPrivateChats, BotCommandScopeAllGroupChats, BotCommandScopeUnion
-
+from aiogram.fsm.scene import SceneRegistry
 from handlers.start_router import start_router
+from dialogs.create_avatar_dialog import create_avatar_dialog
 from handlers.grimoire_router import grimoire_router
 from handlers.battle_router import battle_router
 from handlers.map.map_router import map_router
 from handlers.dungeon.dungeon_router import dungeon_router
 from handlers.profile_router import profile_router
 from handlers.help_router import help_router
+from aiogram_dialog import setup_dialogs
 
 # Функция, которая настроит командное меню (дефолтное для всех пользователей)
 async def set_commands():
@@ -53,6 +55,8 @@ async def stop_bot():
 async def main():
     # регистрация роутеров
     dp.include_router(start_router)
+    dp.include_router(create_avatar_dialog)
+    #dp.include_router(create_avatar_router)
     dp.include_router(dungeon_router)
     dp.include_router(map_router)
     dp.include_router(battle_router)
@@ -63,6 +67,12 @@ async def main():
     dp.startup.register(start_bot)
     dp.shutdown.register(stop_bot)
 
+
+    scene_registry = SceneRegistry(dp)
+    #scene_registry.add(CreateAvatarScene)
+
+    
+    setup_dialogs(dp)
     # запуск бота в режиме long polling при запуске бот очищает все обновления, которые были за его моменты бездействия
     try:
         await bot.delete_webhook(drop_pending_updates=True)

@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 296a04f1ee2b
+Revision ID: 4cfb05edec21
 Revises: 
-Create Date: 2025-11-27 19:13:42.023820
+Create Date: 2025-11-29 17:55:33.766288
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision: str = '296a04f1ee2b'
+revision: str = '4cfb05edec21'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -79,8 +79,8 @@ def upgrade() -> None:
     sa.Column('id', sa.BigInteger(), autoincrement=True, nullable=False),
     sa.Column('current_hp', sa.BigInteger(), nullable=False),
     sa.Column('max_hp', sa.BigInteger(), nullable=False),
-    sa.Column('mana', sa.BigInteger(), nullable=False),
-    sa.Column('mana_max', sa.BigInteger(), nullable=False),
+    sa.Column('current_magic_power', sa.BigInteger(), nullable=False),
+    sa.Column('max_magic_power', sa.BigInteger(), nullable=False),
     sa.Column('attack', sa.BigInteger(), nullable=False),
     sa.Column('defense', sa.BigInteger(), nullable=False),
     sa.Column('strength', sa.BigInteger(), nullable=False),
@@ -117,7 +117,21 @@ def upgrade() -> None:
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
+    op.create_table('furniture',
+    sa.Column('id', sa.BigInteger(), autoincrement=True, nullable=False),
+    sa.Column('name', sa.String(), nullable=False),
+    sa.Column('description', sa.String(), nullable=False),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
+    sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
+    sa.PrimaryKeyConstraint('id')
+    )
     op.create_table('grimoire',
+    sa.Column('id', sa.BigInteger(), autoincrement=True, nullable=False),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
+    sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('house',
     sa.Column('id', sa.BigInteger(), autoincrement=True, nullable=False),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
@@ -125,8 +139,6 @@ def upgrade() -> None:
     )
     op.create_table('inventories',
     sa.Column('id', sa.BigInteger(), autoincrement=True, nullable=False),
-    sa.Column('name', sa.String(), nullable=False),
-    sa.Column('description', sa.String(), nullable=False),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.PrimaryKeyConstraint('id')
@@ -140,14 +152,6 @@ def upgrade() -> None:
     sa.Column('cookable', sa.Boolean(), nullable=False),
     sa.Column('partOfCraft', sa.Boolean(), nullable=False),
     sa.Column('craftable', sa.Boolean(), nullable=False),
-    sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
-    sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
-    sa.PrimaryKeyConstraint('id')
-    )
-    op.create_table('locations',
-    sa.Column('id', sa.BigInteger(), autoincrement=True, nullable=False),
-    sa.Column('name', sa.String(), nullable=True),
-    sa.Column('duration', sa.String(), nullable=True),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.PrimaryKeyConstraint('id')
@@ -212,18 +216,11 @@ def upgrade() -> None:
     sa.ForeignKeyConstraint(['stats_id'], ['avatar_stats.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_table('road',
-    sa.Column('source_id', sa.Integer(), nullable=False),
-    sa.Column('target_id', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['source_id'], ['locations.id'], ),
-    sa.ForeignKeyConstraint(['target_id'], ['locations.id'], ),
-    sa.PrimaryKeyConstraint('source_id', 'target_id')
-    )
     op.create_table('users',
     sa.Column('id', sa.BigInteger(), nullable=False),
     sa.Column('username', sa.String(), nullable=True),
     sa.Column('full_name', sa.String(), nullable=True),
-    sa.Column('avatar_id', sa.BigInteger(), nullable=False),
+    sa.Column('avatar_id', sa.BigInteger(), nullable=True),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.ForeignKeyConstraint(['avatar_id'], ['avatars.id'], ),
@@ -236,7 +233,6 @@ def downgrade() -> None:
     """Downgrade schema."""
     # ### commands auto generated by Alembic - please adjust! ###
     op.drop_table('users')
-    op.drop_table('road')
     op.drop_table('avatars')
     op.drop_table('spirits')
     op.drop_table('spells')
@@ -244,10 +240,11 @@ def downgrade() -> None:
     op.drop_table('regions')
     op.drop_table('races')
     op.drop_table('magic_attributes')
-    op.drop_table('locations')
     op.drop_table('items')
     op.drop_table('inventories')
+    op.drop_table('house')
     op.drop_table('grimoire')
+    op.drop_table('furniture')
     op.drop_table('devils')
     op.drop_table('countries')
     op.drop_table('cities')

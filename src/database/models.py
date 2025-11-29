@@ -14,7 +14,7 @@ class User(Base):
     username: Mapped[str] = mapped_column(String, nullable=True)
     full_name: Mapped[str] = mapped_column(String, nullable=True)
 
-    avatar_id: Mapped[int] = mapped_column(ForeignKey("avatars.id"))
+    avatar_id: Mapped[int] = mapped_column(ForeignKey("avatars.id"), nullable=True)
     avatar: Mapped["Avatar"] = relationship("Avatar", back_populates="user")
 
 
@@ -40,21 +40,21 @@ class Avatar(Base):
      
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
 
-    race_id: Mapped[int] = mapped_column(ForeignKey("races.id"))
+    race_id: Mapped[int] = mapped_column(ForeignKey("races.id"), nullable=False)
     race: Mapped["Race"] = relationship("Race",back_populates="avatars")
 
-    country_id: Mapped[int] = mapped_column(ForeignKey("countries.id"))
+    country_id: Mapped[int] = mapped_column(ForeignKey("countries.id"), nullable=False)
     country: Mapped["Country"] = relationship("Country",back_populates="avatars")
 
 
-    stats_id: Mapped[int] = mapped_column(ForeignKey("avatar_stats.id"))
+    stats_id: Mapped[int] = mapped_column(ForeignKey("avatar_stats.id"), nullable=False)
     stats: Mapped["AvatarStats"] = relationship(back_populates="avatar")
 
-    grimoire_id: Mapped[int] = mapped_column(ForeignKey("grimoire.id"))
+    grimoire_id: Mapped[int] = mapped_column(ForeignKey("grimoire.id"), nullable=False)
     grimoire: Mapped["Grimoire"] = relationship(back_populates="avatar")
 
 
-    inventory_id: Mapped[int] = mapped_column(ForeignKey("inventories.id"))
+    inventory_id: Mapped[int] = mapped_column(ForeignKey("inventories.id"), nullable=False)
     inventory: Mapped["Inventory"] = relationship(back_populates="avatar")
 
 
@@ -67,8 +67,8 @@ class AvatarStats(Base):
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
     current_hp: Mapped[int] = mapped_column(BigInteger, nullable=False)
     max_hp: Mapped[int] = mapped_column(BigInteger, nullable=False)
-    mana: Mapped[int] = mapped_column(BigInteger, nullable=False)
-    mana_max: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    current_magic_power: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    max_magic_power: Mapped[int] = mapped_column(BigInteger, nullable=False)
     attack: Mapped[int] = mapped_column(BigInteger, nullable=False)
     defense:  Mapped[int] = mapped_column(BigInteger, nullable=False)
     strength:  Mapped[int] = mapped_column(BigInteger, nullable=False)
@@ -84,9 +84,6 @@ class Inventory(Base):
     __tablename__ = 'inventories'
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
-    name: Mapped[str] = mapped_column(String, nullable=False)
-    description: Mapped[str] = mapped_column(String, nullable=False)
-
     avatar: Mapped["Avatar"] = relationship(back_populates="inventory")
 
 
@@ -190,6 +187,8 @@ class City(Base):
     name: Mapped[str] = mapped_column(String, nullable=True)
 
 
+'''
+
 road = Table(
     "road",
     Base.metadata,
@@ -220,6 +219,7 @@ class Location(Base):
         back_populates="target",
     )
 
+'''
 
 class ArmedForces(Base):
     __tablename__ = 'armed_forces'
@@ -273,3 +273,15 @@ class Achievement(Base):
     __tablename__ = 'achievements'
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+
+class House(Base):
+    __tablename__ = 'house'
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+
+class Furniture(Base):
+    __tablename__ = 'furniture'
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    name: Mapped[str] = mapped_column(String, nullable=False)
+    description: Mapped[str] = mapped_column(String, nullable=False)

@@ -51,7 +51,7 @@ async def cmd_profile(message: Message, state: FSMContext):
                         as_line(Bold("♥️Здоровье"), health, end="", sep=": "),
                         as_line(Bold("🌀Магическая сила"), magicPower, end="", sep=": "),
                         as_line(Bold("🤪Здравомыслие"), sanity, end="", sep=": "),
-                        as_line(Bold("⚡️ Мотивация"), motivation, end="", sep=": ")
+                        as_line(Bold("⚡️ Мотивация"), motivation, end="", sep=": "),
                         as_line(Bold("⚔️Атака"), constitution, end="", sep=": "),
                         as_line(Bold("🛡️Защита"), intelligence, end="", sep=": "),
                         as_line(Bold("🏋️Телосложение"), constitution, end="", sep=": "),

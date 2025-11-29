@@ -1,20 +1,27 @@
 from aiogram import Router, F
 from aiogram.filters import CommandStart
 from aiogram.fsm.context import FSMContext
+from aiogram.filters.state import StatesGroup, State
 from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardRemove, ReplyKeyboardMarkup
 from database.dao import set_user
-from keyboards.reply_other_kb import main_kb
+from keyboards.reply_other_kb import main_kb, start_kb
 from aiogram.types import FSInputFile
 from create_bot import bot, dp, admins
 from pathlib import Path
 from create_bot import logger
+from dialogs.create_avatar_dialog import CreateAvatarSG
 from settings import settings
 from filters.chat_type import ChatTypeFilter
+from aiogram_dialog import Dialog, DialogManager, StartMode
 start_router = Router()
 
 
+class StartSG(StatesGroup):
+    main = State()
+    createAvatar = State()
 
-@start_router.message(F.text == '🔙Назад')
+
+#@start_router.message(F.text == '🔙Назад')
 @start_router.message(ChatTypeFilter(chat_type=["private"]),CommandStart())
 async def cmd_private_start(message: Message, state: FSMContext):
     await state.clear()
@@ -23,18 +30,39 @@ async def cmd_private_start(message: Message, state: FSMContext):
     user = await set_user(tg_id=message.from_user.id,
                           username=message.from_user.username,
                           full_name=message.from_user.full_name)
-    greeting = f"Привет, {message.from_user.full_name}! Выбери необходимое действие"
-    if user is None:
-        greeting = f"Великая война, затронувшая все 4 королевства мира Чёрного клевера, закончилась 300 лет назад.\n\nВойска Люциуса Зогратиса тогда потерпели поражение в битве за столицу Королевства Клевер. Жизнь возвратилась в мирное русло, а о героях той войны, Асте и Юно, стали слагать легенды.\nОднако на горизонте появилась новая угроза.\n\nИз дальних уголков всех четырёх королевств доходят слухи о странных подземельях, оставленных далёкими предками, жившими тысячилетия назад на этой земле, о разломах, порождающих невиданных чудовищ, а также о появленнии новых Великих Магических Зон на нейтральных территориях, в которых очень опасно находиться.\n\nCейчас после той великой войны судьба дала жителям мира Чёрного клевера передышку, но надолго ли?\n\nСможете ли вы повлиять на исход будущих событий и встать в один ряд с сильными мира сего? Все в ваших руках…"
-
-    photo = FSInputFile(WELCOME_IMAGE_PATH)
-    await message.answer_photo(photo=photo, caption=greeting, reply_markup=main_kb())
+    #greeting = f"Привет, {message.from_user.full_name}! Выбери необходимое действие"
+    greeting = f"В игре \"Чёрный клевер. Жизнь мага\" вы можете начать своё путешествие в качестве мага.\n\n В данный момент вы ещё не являетесь частью магического мира. Для рождения нажмите кнопку ниже."
+      #greeting = f"Великая война, затронувшая все 4 королевства мира Чёрного клевера, закончилась 300 лет назад.\n\nВойска Люциуса Зогратиса тогда потерпели поражение в битве за столицу Королевства Клевер. Жизнь возвратилась в мирное русло, а о героях той войны, Асте и Юно, стали слагать легенды.\nОднако на горизонте появилась новая угроза.\n\nИз дальних уголков всех четырёх королевств доходят слухи о странных подземельях, оставленных далёкими предками, жившими тысячилетия назад на этой земле, о разломах, порождающих невиданных чудовищ, а также о появленнии новых Великих Магических Зон на нейтральных территориях, в которых очень опасно находиться.\n\nCейчас после той великой войны судьба дала жителям мира Чёрного клевера передышку, но надолго ли?\n\nСможете ли вы повлиять на исход будущих событий и встать в один ряд с сильными мира сего? Все в ваших руках…"
+    print(user.avatar_id)
+    if user is None or user.avatar_id is None:
+        photo = FSInputFile(WELCOME_IMAGE_PATH)
+        await message.answer_photo(photo=photo, caption=greeting, reply_markup=start_kb())
+    else:
+        await message.answer("✅ Сообщение отправлено", reply_markup=main_kb())
 
 @start_router.message(ChatTypeFilter(chat_type=["group", "supergroup"]),CommandStart())
 async def cmd_start(message: Message, state: FSMContext):
     await state.clear()
     greeting = f"Привет, путник!"
     await message.answer(greeting, reply_markup=ReplyKeyboardRemove())
+
+
+
+@start_router.message(F.text == '🌍Начать путешествие')
+async def create_avatar(message: Message, state: FSMContext,  dialog_manager: DialogManager):
+    await state.clear()
+    await dialog_manager.start(CreateAvatarSG.main, mode=StartMode.RESET_STACK,  data={'race_page': 1, 'country_page': 1},)
+
+
+'''
+@start_router.message(No[Dialog]) 
+async def on_dialog_closed(message: Message, result: dict, dialog_manager: DialogManager):
+    if result and result.get("status") == "completed":
+        final_data = result.get("data")
+        await message.answer(f"Создание персонажа произошло упешно!")
+    else:
+        await message.answer("Диалог был закрыт.")
+'''
 
 @start_router.message(F.text == '❌ Остановить сценарий')
 async def stop_fsm(message: Message, state: FSMContext):
