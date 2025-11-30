@@ -80,19 +80,22 @@ async def add_avatar(session, user_id: int, race_id: int,
         session.add(new_inventory)
 
 
+        '''
         new_grimoire = Grimoire(
         )
 
         session.add(new_grimoire)
+        '''
 
         await session.flush()
         new_avatar = Avatar(
             #user_id=user_id,
+            nick="тест",
             race_id=race_id,
             country_id=country_id,
             stats_id=new_stats.id,
             inventory_id=new_inventory.id,
-            grimoire_id=new_grimoire.id
+            ##grimoire_id=new_grimoire.id
         )
 
         session.add(new_avatar)
@@ -159,3 +162,23 @@ async def get_countries(session, page, items_per_page) -> List[Dict[str, Any]]:
     except SQLAlchemyError as e:
         logger.error(f"Ошибка при получении стран: {e}")
         return []
+    
+
+
+@connection
+async def get_a_by_id(session, note_id: UUID) -> Optional[Dict[str, Any]]:
+    try:
+        note = await session.get(Note, note_id)
+        if not note:
+            logger.info(f"Заметка с ID {note_id} не найдена.")
+            return None
+
+        return {
+            'id': note.id,
+            'content_type': note.content_type,
+            'content_text': note.content_text,
+            'file_id': note.file_id
+        }
+    except SQLAlchemyError as e:
+        logger.error(f"Ошибка при получении заметки: {e}")
+        return None

@@ -2,6 +2,8 @@ import asyncio
 from create_bot import bot, dp, admins
 from aiogram.types import BotCommand, BotCommandScopeAllPrivateChats, BotCommandScopeAllGroupChats, BotCommandScopeUnion
 from aiogram.fsm.scene import SceneRegistry
+from handlers.honor_board_router import honor_board_router
+from handlers.map.house_router import house_router
 from handlers.start_router import start_router
 from dialogs.create_avatar_dialog import create_avatar_dialog
 from handlers.grimoire_router import grimoire_router
@@ -20,7 +22,7 @@ async def set_commands():
                     BotCommand(command='inventory', description='Ваш инвентарь'),
                     BotCommand(command='devils', description='Список всех дьяволов'),
                     BotCommand(command='spirits', description='Список всех духов'),
-                    BotCommand(command='locations', description='Локации'),
+                    BotCommand(command='house', description='Дом'),
                     BotCommand(command='daily', description='Ежедневки'),
                     BotCommand(command='quests', description='Квесты'),
                     BotCommand(command='achiv', description='Достижения'),
@@ -56,7 +58,8 @@ async def main():
     # регистрация роутеров
     dp.include_router(start_router)
     dp.include_router(create_avatar_dialog)
-    #dp.include_router(create_avatar_router)
+    dp.include_router(honor_board_router)
+    dp.include_router(house_router)
     dp.include_router(dungeon_router)
     dp.include_router(map_router)
     dp.include_router(battle_router)
@@ -69,7 +72,6 @@ async def main():
 
 
     scene_registry = SceneRegistry(dp)
-    #scene_registry.add(CreateAvatarScene)
 
     
     setup_dialogs(dp)

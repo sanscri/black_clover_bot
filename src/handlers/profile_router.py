@@ -4,20 +4,21 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 from aiogram.utils.formatting import Bold, as_line, as_list
 from aiogram.fsm.state import StatesGroup, State
+from aiogram.enums import ParseMode
 
-from keyboards.reply_profile_kb import profile_kb
+from keyboards.reply_profile_kb import contracts_kb, effects_kb, grimoire_kb, inventory_kb, profile_kb, skills_kb, stats_kb
 profile_router = Router()
 
 
 
 class ProfileStates(StatesGroup):
-    content = State()  # Ожидаем любое сообщение от пользователя
-    check_state = State()  # Финальна проверка
+    pass
 
 
 
 @profile_router.message(Command("profile"))
-@profile_router.message(F.text == '👤Профиль')
+@profile_router.message(F.text == '🧙 Основное')
+@profile_router.message(F.text == '👤 Профиль')
 async def cmd_profile(message: Message, state: FSMContext):
     await state.clear()
     name = "Тест"
@@ -62,9 +63,9 @@ async def cmd_profile(message: Message, state: FSMContext):
                         as_line(Bold("🎯Шанс критического удара"), crit_chance, end="", sep=": "),
                         as_line(Bold("💥Урон от критического удара"), crit_damage, end="", sep=": "),
                         as_line(Bold("👛Кошелёк"), "🟤", "⚪️", "🔵", "🟡", "🪙", end="", sep=": "),
-                        )
+                        ).as_html()
   
-    await message.answer(**content.as_kwargs(), reply_markup=profile_kb())
+    await message.answer(content, parse_mode=ParseMode.HTML, reply_markup=profile_kb())
     
 
 @profile_router.message(F.text == '📕 Гримуар')
@@ -77,4 +78,50 @@ async def cmd_profile(message: Message, state: FSMContext):
                         as_line(Bold("🆔Ваш id"), userId, end="", sep=": "),
                         as_line(Bold("🃏Магический атрибут"), magicType, end="", sep=": "),
                         )
-    await message.answer(**content.as_kwargs(), reply_markup=profile_kb())
+    await message.answer(content.as_html(), parse_mode=ParseMode.HTML, reply_markup=grimoire_kb())
+
+
+@profile_router.message(F.text == '🧬 Характеристики')
+async def cmd_profile(message: Message, state: FSMContext):
+    await state.clear()
+ 
+
+    content =  as_list(as_line(Bold("🧬 Характеристики")),
+                        )
+    await message.answer(content.as_html(), parse_mode=ParseMode.HTML, reply_markup=stats_kb())
+
+
+@profile_router.message(F.text == '📖 Навыки')
+async def cmd_profile(message: Message, state: FSMContext):
+    await state.clear()
+ 
+    content =  as_list(as_line(Bold("📖 Навыки")))
+    await message.answer(content.as_html(), parse_mode=ParseMode.HTML, reply_markup=skills_kb())
+
+
+
+@profile_router.message(F.text == '🎒 Инвентарь')
+async def cmd_profile(message: Message, state: FSMContext):
+    await state.clear()
+ 
+    content =  as_list(as_line(Bold("🎒 Инвентарь"))
+                        )
+    await message.answer(content.as_html(), parse_mode=ParseMode.HTML, reply_markup=inventory_kb())
+
+
+@profile_router.message(F.text == '🪄 Эффекты')
+async def cmd_profile(message: Message, state: FSMContext):
+    await state.clear()
+ 
+
+    content =  as_list(as_line(Bold("🪄 Эффекты")),
+                        )
+    await message.answer(content.as_html(), parse_mode=ParseMode.HTML, reply_markup=effects_kb())
+
+@profile_router.message(F.text == '📃 Контракты')
+async def cmd_profile(message: Message, state: FSMContext):
+    await state.clear()
+ 
+    content =  as_list(as_line(Bold("📃 Контракты")),
+                        )
+    await message.answer(content.as_html(), parse_mode=ParseMode.HTML, reply_markup=contracts_kb())

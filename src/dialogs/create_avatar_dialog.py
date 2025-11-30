@@ -5,8 +5,9 @@ from aiogram_dialog import Dialog, DialogManager, Window
 from aiogram_dialog.widgets.common import Whenable
 from aiogram_dialog.widgets.kbd import Button, Cancel, SwitchTo
 from aiogram_dialog.widgets.text import Const, Format, Jinja
-from aiogram.utils.formatting import Text, Bold, as_list, as_line
+from captions.start import start_caption
 from create_bot import bot, dp, admins
+from aiogram.enums import ParseMode
 from typing import Any
 
 from aiogram_dialog.widgets.kbd import (
@@ -61,8 +62,8 @@ async def cancel_dialog(callback: CallbackQuery, button: Button,
     if avatar is None:
         await callback.message.answer("Не удалось создать пользователя. Пожалуйста, обратитесь в техподдержку.")
         return
-    #await manager.event.answer("hello")
-    await callback.message.answer("✅ Сообщение отправлено", reply_markup=main_kb())
+    answer = start_caption()
+    await callback.message.answer(answer, parse_mode=ParseMode.HTML, reply_markup=main_kb())
     await manager.done(result=avatar)
     
     #await manager.send_message(chat_id=chat_id, text="Профиль")
